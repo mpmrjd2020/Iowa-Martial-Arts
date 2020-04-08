@@ -6,12 +6,12 @@
 
 <img src="{{ location.picture_url }}" alt="{{ location.dojo_name }}" class="artist-photo" />
 
-<h3>Classes <a href="">(+)</a></h3>
+<h3>Classes <a href="{% url 'class_schedule_create' %}">(+)</a></h3>
 <ul>
-  {% for class_schedule in location.class_schedules.all %}
-  <li>
-    <a href="{% url 'class_schedule_detail' pk=class_schedule.pk %}">{{ class_schedule.style }}</a>
-  </li>
-  {% endfor %}
+    {% for class_schedule in location.Class_Schedules.all %}
+    <li>
+        <a href="{% url 'class_schedule_detail' pk=class_schedule.pk %}">{{ class_schedule.style }} Class Schedule</a>
+    </li>
+    {% endfor %}
 </ul>
 {% endblock %}

@@ -1,5 +1,5 @@
 {% extends 'martial_arts/base.html' %} {% block content %}
-<h2>Locations <a href="">(+)</a></h2>
+<h2>Locations <a href="{% url 'location_create' %}">(+)</a></h2>
 <ul>
   {% for location in locations %}
   <li>
