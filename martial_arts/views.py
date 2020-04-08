@@ -42,7 +42,7 @@ def class_schedule_create(request):
 def location_edit(request, pk):
     location = Location.objects.get(pk=pk)
     if request.method == 'POST':
-        form = LocationForm(request.POST)
+        form = LocationForm(request.POST, instance=location)
         if form.is_valid():
             location = form.save()
             return redirect('location_detail', pk=location.pk)
@@ -51,11 +51,12 @@ def location_edit(request, pk):
     return render(request, 'martial_arts/location_form.html', {'form': form})
 
 def class_schedule_edit(request, pk):
+    class_schedule = Class_Schedule.objects.get(pk=pk)
     if request.method == 'POST':
-        form = ClassForm(request.POST)
+        form = ClassForm(request.POST,instance=class_schedule)
         if form.is_valid():
             class_schedule = form.save()
             return redirect('class_schedule_detail', pk=class_schedule.pk)
     else:
-        form = ClassForm()
+        form = ClassForm(instance=class_schedule)
     return render(request, 'martial_arts/class_schedule_form.html', {'form': form})

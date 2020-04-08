@@ -1,5 +1,5 @@
 {% extends 'martial_arts/base.html' %} {% block content %}
-<h2>{{ class_schedule.style }} <a href="">(edit)</a></h2>
+<h2>{{ class_schedule.style }} <a href="{% url 'class_schedule_edit' pk=class_schedule.pk %}">(edit)</a></h2>
 <h3>Instructor: {{ class_schedule.instructor}}</h3>
 
 <h3>Schedule: </h3>{{ class_schedule.schedule }}

@@ -1,5 +1,5 @@
 {% extends 'martial_arts/base.html' %} {% block content %}
-<h2>{{ location.dojo_name }} <a href="">(edit)</a></h2>
+<h2>{{ location.dojo_name }} <a href="{% url 'location_edit' pk=location.pk %}">(edit)</a></h2>
 <h4>{{ location.address }}</h4>
 <h4>{{ location.email }}</h4>
 <h4>{{ location.phone }}</h4>
