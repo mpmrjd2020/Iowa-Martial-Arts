@@ -1,1 +1,10 @@
-CLASS SCHEDULE 
+{% extends 'martial_arts/base.html' %} {% block content %}
+<h2>Classes</h2>
+<ul>
+  {% for class_schedule in class_schedules %}
+  <li>
+    <a href="{% url 'class_schedule_detail' pk=class_schedule.pk %}">{{ class_schedule.location.dojo_name }} - {{ class_schedule.style }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,1 +1,10 @@
-LOCATION
+{% extends 'martial_arts/base.html' %} {% block content %}
+<h2>Locations <a href="">(+)</a></h2>
+<ul>
+  {% for location in locations %}
+  <li>
+    <a href="{% url 'location_detail' pk=location.pk %}">{{ location.dojo_name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

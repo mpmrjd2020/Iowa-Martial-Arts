@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+  <head>
+    <title>Iowa Martial Arts</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Iowa Martial Arts</h1>
+    <nav>
+      <a href="/classes">Classes</a>
+      <a href="/">Locations</a>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>
