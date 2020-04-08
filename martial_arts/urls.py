@@ -10,4 +10,6 @@ urlpatterns = [
     path('classes/new', views.class_schedule_create, name='class_schedule_create'),
     path('locations/<int:pk>/edit', views.location_edit, name='location_edit'),
     path('classes/<int:pk>/edit', views.class_schedule_edit, name='class_schedule_edit'),
+    path('locations/<int:pk>/delete', views.location_delete, name='location_delete'),
+    path('classes/<int:pk>/delete', views.class_schedule_delete, name='class_schedule_delete'),
 ]

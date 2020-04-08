@@ -60,3 +60,11 @@ def class_schedule_edit(request, pk):
     else:
         form = ClassForm(instance=class_schedule)
     return render(request, 'martial_arts/class_schedule_form.html', {'form': form})
+
+def location_delete(request, pk):
+    Location.objects.get(id=pk).delete()
+    return redirect('location_list')
+
+def class_schedule_delete(request, pk):
+    Class_Schedule.objects.get(id=pk).delete()
+    return redirect('class_schedule_list')

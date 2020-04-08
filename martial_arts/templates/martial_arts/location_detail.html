@@ -6,6 +6,10 @@
 
 <img src="{{ location.picture_url }}" alt="{{ location.dojo_name }}" class="artist-photo" />
 
+<div>
+    <a href="{% url 'location_delete' pk=location.pk %}">DELETE Location</a>
+  </div>
+
 <h3>Classes <a href="{% url 'class_schedule_create' %}">(+)</a></h3>
 <ul>
     {% for class_schedule in location.Class_Schedules.all %}
