@@ -7,8 +7,15 @@
   <body>
     <h1>Iowa Martial Arts</h1>
     <nav>
-      <a href="/classes">Classes</a>
-      <a href="/">Locations</a>
+       <a href="/">Locations</a>
+      <a href="{% url 'class_schedule_list' %}">Classes</a>
+      <div class="user-info">
+        {% if user.is_authenticated %} Welcome, {{ user.username }}
+        <a href="{% url 'logout' %}">Log out</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+      </div>
     </nav>
     {% block content %} {% endblock %}
   </body>

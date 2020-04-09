@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Redirect to home page instead of /accounts/profile
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'martial_arts.apps.MartialArtsConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
