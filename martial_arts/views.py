@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Location, Class_Schedule
 from .forms import LocationForm, ClassForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def location_list(request):
@@ -19,6 +20,7 @@ def class_schedule_detail(request, pk):
     class_schedule = Class_Schedule.objects.get(id=pk)
     return render(request, 'martial_arts/class_schedule_detail.html', {'class_schedule': class_schedule})
 
+@login_required
 def location_create(request):
     if request.method == 'POST':
         form = LocationForm(request.POST)
@@ -29,6 +31,7 @@ def location_create(request):
         form = LocationForm()
     return render(request, 'martial_arts/location_form.html', {'form': form})
 
+@login_required
 def class_schedule_create(request):
     if request.method == 'POST':
         form = ClassForm(request.POST)
@@ -39,6 +42,7 @@ def class_schedule_create(request):
         form = ClassForm()
     return render(request, 'martial_arts/class_schedule_form.html', {'form': form})
 
+@login_required
 def location_edit(request, pk):
     location = Location.objects.get(pk=pk)
     if request.method == 'POST':
@@ -50,6 +54,7 @@ def location_edit(request, pk):
         form = LocationForm(instance=location)
     return render(request, 'martial_arts/location_form.html', {'form': form})
 
+@login_required
 def class_schedule_edit(request, pk):
     class_schedule = Class_Schedule.objects.get(pk=pk)
     if request.method == 'POST':
@@ -61,10 +66,12 @@ def class_schedule_edit(request, pk):
         form = ClassForm(instance=class_schedule)
     return render(request, 'martial_arts/class_schedule_form.html', {'form': form})
 
+@login_required
 def location_delete(request, pk):
     Location.objects.get(id=pk).delete()
     return redirect('location_list')
 
+@login_required
 def class_schedule_delete(request, pk):
     Class_Schedule.objects.get(id=pk).delete()
     return redirect('class_schedule_list')
