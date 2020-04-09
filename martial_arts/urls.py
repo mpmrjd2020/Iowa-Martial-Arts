@@ -12,4 +12,5 @@ urlpatterns = [
     path('classes/<int:pk>/edit', views.class_schedule_edit, name='class_schedule_edit'),
     path('locations/<int:pk>/delete', views.location_delete, name='location_delete'),
     path('classes/<int:pk>/delete', views.class_schedule_delete, name='class_schedule_delete'),
+  
 ]

@@ -23,7 +23,7 @@ def class_schedule_detail(request, pk):
 @login_required
 def location_create(request):
     if request.method == 'POST':
-        form = LocationForm(request.POST)
+        form = LocationForm(request.POST, request.FILES)
         if form.is_valid():
             location = form.save()
             return redirect('location_detail', pk=location.pk)
@@ -46,7 +46,7 @@ def class_schedule_create(request):
 def location_edit(request, pk):
     location = Location.objects.get(pk=pk)
     if request.method == 'POST':
-        form = LocationForm(request.POST, instance=location)
+        form = LocationForm(request.POST, request.FILES, instance=location, )
         if form.is_valid():
             location = form.save()
             return redirect('location_detail', pk=location.pk)
@@ -75,3 +75,4 @@ def location_delete(request, pk):
 def class_schedule_delete(request, pk):
     Class_Schedule.objects.get(id=pk).delete()
     return redirect('class_schedule_list')
+

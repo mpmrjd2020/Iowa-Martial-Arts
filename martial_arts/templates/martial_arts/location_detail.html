@@ -6,6 +6,11 @@
 
 <img src="{{ location.picture_url }}" alt="{{ location.dojo_name }}" class="artist-photo" />
 
+<br>
+<br>
+
+<img src="{{ location.cover.url }}" alt="Uploaded file" class="artist-photo" >
+
 <div>
     <a href="{% url 'location_delete' pk=location.pk %}">DELETE Location</a>
   </div>
