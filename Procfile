@@ -1,0 +1,1 @@
+web: gunicorn Iowa_Martial_Arts.wsgi
