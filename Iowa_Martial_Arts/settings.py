@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [‘0.0.0.0’, ‘localhost’, 'https://young-stream-36893.herokuapp.com/']
+ALLOWED_HOSTS = ['https://young-stream-36893.herokuapp.com/']
 
 # Redirect to home page instead of /accounts/profile
 LOGIN_REDIRECT_URL = '/'
