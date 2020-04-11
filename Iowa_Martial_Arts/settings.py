@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1_&^0z_69tdbxuxu4c*)h179zcey(%omdk*ct@*uh)+hdj975y'
+# SECRET_KEY = '1_&^0z_69tdbxuxu4c*)h179zcey(%omdk*ct@*uh)+hdj975y'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://young-stream-36893.herokuapp.com/']
 
 # Redirect to home page instead of /accounts/profile
 LOGIN_REDIRECT_URL = '/'
